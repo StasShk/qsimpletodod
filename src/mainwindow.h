@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+
+
 namespace Ui {
 class MainWindow;
 }
@@ -14,6 +16,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+signals:
+    void ConnectActivate(QString ServerAdress);
+
+private slots:
+    void connectClicked();
 
 private:
     Ui::MainWindow *ui;
