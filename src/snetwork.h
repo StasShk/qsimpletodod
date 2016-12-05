@@ -18,21 +18,21 @@ class sNetwork : public QObject
 public:
     explicit sNetwork(QObject *parent = 0);
 
-    Q_PROPERTY(QUrl ServerAdress READ ServerAdress WRITE setServAdress NOTIFY ServerAdressChanged)
+    Q_PROPERTY(QString ServerAdress READ ServerAdress WRITE setServAdress NOTIFY ServerAdressChanged)
 
-    QUrl ServerAdress() const;
+    QString ServerAdress() const;
 
 signals:
-    void ServerAdressChanged(QUrl ServerAdress);
+    void ServerAdressChanged(QString ServerAdress);
 
 public slots:
-    void setServAdress(QUrl ServerAdress);
+    void setServAdress(QString ServerAdress);
 
 protected:
      QNetworkAccessManager *manager;
 
 private:
-    QUrl m_ServerAdress;
+    QString m_ServerAdress;
 
 };
 

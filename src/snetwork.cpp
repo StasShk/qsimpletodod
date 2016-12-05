@@ -9,19 +9,21 @@ sNetwork::sNetwork(QObject *parent) : QObject(parent)
 }
 
 
-QUrl sNetwork::ServerAdress() const{
+QString sNetwork::ServerAdress() const{
     return m_ServerAdress;
 }
 
-void sNetwork::setServAdress(QUrl ServerAdress){
+void sNetwork::setServAdress(QString ServerAdress){
     if ( m_ServerAdress == ServerAdress)
         return;
 
-    m_ServerAdress = ServerAdress;
+    m_ServerAdress = "http://127.0.0.1:8000/";
+    QUrl url(m_ServerAdress);
 
-    QNetworkRequest request(m_ServerAdress);
+    QNetworkRequest request(url);
 
 
-    QNetworkReply *reply = manager->get(request);
+    QNetworkReply *reply;
+    manager->get(request);
 
 }

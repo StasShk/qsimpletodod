@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
     MainWindow w;
 
     sNetwork new_server;
-    QObject::connect(&w, SIGNAL(w::ConnectActivate(QString)),
-            &new_server, SLOT(new_server::setServAdress(QUrl)));
+    QObject::connect(&w, SIGNAL(ConnectActivate(QString)),
+            &new_server, SLOT(setServAdress(QString)));
 
 
     w.show();
