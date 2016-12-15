@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 
-#include "snetwork.h"
+#include "networkmanger.h"
 
 
 
@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
 
-    sNetwork new_server;
+    NetworkManger new_server;
     QObject::connect(&w, SIGNAL(ConnectActivate(QString)),
             &new_server, SLOT(setServAdress(QString)));
 

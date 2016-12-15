@@ -1,6 +1,6 @@
-#include "snetwork.h"
+#include "networkmanger.h"
 
-sNetwork::sNetwork(QObject *parent) : QObject(parent)
+NetworkManger::NetworkManger(QObject *parent) : QObject(parent)
 {
     manager = new QNetworkAccessManager(this);
 
@@ -9,11 +9,11 @@ sNetwork::sNetwork(QObject *parent) : QObject(parent)
 }
 
 
-QString sNetwork::ServerAdress() const{
+QString NetworkManger::ServerAdress() const{
     return m_ServerAdress;
 }
 
-void sNetwork::setServAdress(QString ServerAdress){
+void NetworkManger::setServAdress(QString ServerAdress){
     if ( m_ServerAdress == ServerAdress)
         return;
 

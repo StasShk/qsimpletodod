@@ -1,5 +1,5 @@
-#ifndef SNETWORK_H
-#define SNETWORK_H
+#ifndef NETWORKMANAGER_H
+#define NETWORKMANAGER_H
 
 #include <QObject>
 #include <QtNetwork/QNetworkAccessManager>
@@ -11,12 +11,12 @@
 #include <QUrl>
 
 
-class sNetwork : public QObject
+class NetworkManger : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit sNetwork(QObject *parent = 0);
+    explicit NetworkManger(QObject *parent = 0);
 
     Q_PROPERTY(QString ServerAdress READ ServerAdress WRITE setServAdress NOTIFY ServerAdressChanged)
 
